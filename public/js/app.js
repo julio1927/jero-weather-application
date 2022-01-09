@@ -1,9 +1,9 @@
 // Get Weather data
 
-const weatherForm = document.querySelector("#WeatherForm");
-const search = document.querySelector("#address");
-const msg1 = document.querySelector("#msg1");
-const msg2 = document.querySelector("#msg2");
+const weatherForm = document.getElementById("WeatherForm");
+const search = document.getElementById("address");
+const msg1 = document.getElementById("msg1");
+const msg2 = document.getElementById("msg2");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
