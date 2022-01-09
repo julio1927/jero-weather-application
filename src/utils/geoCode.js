@@ -1,0 +1,26 @@
+const request = require("postman-request");
+
+const geoCode = (address, callback) => {
+  const url =
+    "https://api.mapbox.com/geocoding/v5/mapbox.places/" +
+    encodeURIComponent(address) +
+    ".json?access_token=pk.eyJ1IjoianVsaW8xOTI3IiwiYSI6ImNrdjJtY3Z5Zjg4NHIyb21uYTM0ZTZzZzcifQ.PoGUNbRz-rY6FR6iEDGk5Q&limit=1";
+
+  request({ url, json: true }, (error, { body }) => {
+    if (error) {
+      callback("Unable to connect to weather forecast.", undefined);
+    } else if (body.error) {
+      callback("Unable to find location, try another search", undefined);
+    } else if (body.features.length === 0) {
+      callback("Unable to find location, try another search", undefined);
+    } else {
+      callback(undefined, {
+        longitude: body.features[0].center[0],
+        latitude: body.features[0].center[1],
+        location: body.features[0].place_name,
+      });
+    }
+  });
+};
+
+module.exports = geoCode;
