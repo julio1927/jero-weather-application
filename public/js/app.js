@@ -10,6 +10,8 @@ msg2.textContent = ' ';
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  console.log("Im in fetch");
   
   const location = search.value;
 
