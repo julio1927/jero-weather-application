@@ -27,13 +27,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #FF312E;
-}
-
-header a {
-  color: #515052;
-  margin-right: 16px;
-  text-decoration: none;
+  color: #1266F1;
 }
 
 .navHover:hover {
@@ -45,7 +39,6 @@ h1 {
   color: #000103;
   font-size: 64px;
   margin-bottom: 16px;
-  margin-top: 24px;
 }
 
 .portrait {
